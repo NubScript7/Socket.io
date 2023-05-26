@@ -10,7 +10,15 @@ const io = require('socket.io');
 
 io.on('connection', (socket) => {
 
+  socket.on("req-num",()=>{
   
+    io.emit("test","test request.")    
+    
+  })
+  
+  socket.on("req-get",(ev,data)=>{
+    io.emit(ev,data)
+  })
   
 });
 
